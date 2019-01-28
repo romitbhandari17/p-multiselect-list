@@ -28,35 +28,21 @@ export class PMultiselectListComponent implements OnInit, OnChanges, ControlValu
 
   @Input() label:String="Items";
   @Input() heightOuterDiv:number=210;
-  @Input() public weightOuterDiv:number=1000;
+  @Input() public widthOuterDiv:number=1000;
   @Input() public type:String='box';
   @Input() public itemsLeft:Object[];
   @Input() public itemsRight:Object[];
-  public hideWidget:boolean=false;
 
-  @HostListener('document:click', ['$event'])
-  public onClick(event: Event) {
-      this.hideWidget=true;
-  }
+  // @HostListener('document:click', ['$event'])
+  // public onClick(event: Event) {
+  //     this.hideWidget=true;
+  // }
 
   public heightInnerDiv:number;
   constructor() { }
 
   ngOnInit() {
     this.heightInnerDiv = this.heightOuterDiv - 60;
-    // this.itemsRight=[];
-    // this.items = [
-    //   {'name':'Agriculture', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida, UP, India' },
-    //   {'name':'Sports', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Textiles', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Mining', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Construction', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Education Services', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'HealthCare', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Manufacturing', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' },
-    //   {'name':'Softwares', 'email' :'anil.singh581@gmail.com', 'age' :'34', 'city':'Noida' }
-    // ];
-    //this.items.sort();
     console.log('ng On Init in multiselect');
     this.setLeftItems();
   }
